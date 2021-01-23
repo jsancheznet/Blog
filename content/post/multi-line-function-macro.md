@@ -1,6 +1,7 @@
 ---
 title: "Making multi-line macros behave as a functions"
-layout: post
+date: 2019-06-22
+draft: false
 ---
 
 When you need a muli-line macro to have its own scope and behave as a
@@ -12,7 +13,7 @@ not helping. The naive macro implementation has come back to bite you.
 
 Here's the naive implementation, let's see how to fix it.
 
-{% highlight c++ %}
+```C++
 #define MyMultipleLineMacro(Expr) \
 {                                 \
     DoStuffRightHere(Expr);       \
@@ -26,10 +27,10 @@ void main()
     else
         SomeOtherOperation;
 }
-{% endhighlight %}
+```
 
 Let's run the preprocessor and see how the macro was expanded:
-{% highlight c++ %}
+```C++
 void main()
 {
     if(1)
@@ -40,9 +41,9 @@ void main()
     else
         SomeOtherOperation;
 }
-{% endhighlight %}
+```
 To solve this problem, wrap the macro inside a do{}while(0) loop instead.
-{% highlight c++ %}
+```C++
 #define MyMultipleLineMacro(Expr) \
     do{                           \
         DoStuffRightHere(Expr);   \
@@ -61,5 +62,6 @@ void main()
 
     return 0;
 }
-{% endhighlight %}
+```
+
 Have a good day!

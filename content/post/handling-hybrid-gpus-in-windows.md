@@ -1,6 +1,7 @@
 ---
 title: "Handling Hybrid GPU's in Windows"
-layout: post
+date: 2019-12-7
+draft: false
 ---
 
 Hybrid GPU's are everywhere these days and yet it is not obvious how to run your program using the discrete GPU.
@@ -13,7 +14,7 @@ I can think of 5 ways on how to get this done:
 4. Linking your program against nVidia's defined libraries such as "nvapi64.dll"(The list of libraries is defined in the manual at the bottom of the page). Calling HMODULE Lib =  LoadLibraryA("nvapi64.dll") in main function does the trick. This seems to be the old way of doing things, continue reading for a better solution.
 5. The best solution i know is to include the following code at global scope.
 
-{% highlight c++ %}
+```C++
 #ifdef _WIN32
 extern "C"
 {
@@ -23,7 +24,7 @@ extern "C"
     __declspec( dllexport ) int AmdPowerXpressRequestHighPerformance = 1;
 }
 #endif
-{% endhighlight %}
+```
 
 I have only tested the code on nVidia Optimus since it's the only thing i have.
 

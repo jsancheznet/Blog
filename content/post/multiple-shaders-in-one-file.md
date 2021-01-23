@@ -1,6 +1,7 @@
 ---
 title: "Multiple OpenGL shaders in one file"
-layout: post
+date: 2019-12-9
+draft: false
 ---
 
 If you have been using OpenGL for a while, you probably have a lot of
@@ -18,7 +19,7 @@ These are the two things that make this trick possible.
 The idea is to separate different shader stages inside an #ifdef blocks and setting the corresponding #define directive for the shader stage.
 
 Here's an example of what a shader might look like using this method.
-{% highlight glsl %}
+```glsl
 #ifdef VERTEX_SHADER
 
 layout(location = 0) in vec3 Vertices;
@@ -46,11 +47,10 @@ void main()
 }
 
 #endif
-{% endhighlight %}
+```
 
 Shader compilation looks something like this:
-{% highlight c++ %}
-
+```C++
 char *SourceFile = ReadTextFile("MyShader.glsl");
 
 // Compile Vertex Shader
@@ -72,7 +72,7 @@ u32 FinalProgram = glCreateProgram();
 glAttachShader(FinalProgram, VertexShaderObject);
 glAttachShader(FinalProgram, FragmentShaderObject);
 glLinkProgram(Result);
-{% endhighlight %}
+```
 Notice that before calling glShaderSource we create an array of two
 pointers to char, the first one contains glsl's #version preprocessor
 directive and the token that defines each shader. In the case of the

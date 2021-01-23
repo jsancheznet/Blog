@@ -28,7 +28,7 @@ privacy:
     useSessionStorage: false
 
 author:
-  name: Jorge Sánchez
+  name:
   profile: ""
 
 taxonomies:
@@ -39,7 +39,7 @@ params:
     - post
   intro: true
   headline: Jorge Sánchez
-  description: Create a nice description
+  description:
   github: "https://github.com/jsanchezuy"
 #  gitlab: "https://gitlab.com/XXX"
 #  linkedin: "https://linkedin.com/in/XXX/"
@@ -69,6 +69,7 @@ params:
 permalinks:
   post: "/:day/:month/:year/:filename/"
 
+
 menu:
   main:
     - name: Blog
@@ -78,8 +79,24 @@ menu:
       url: /project/
       weight: 2
     - name: Contact
-      url: /page/contact/
+      url: /contact/
       weight: 3
     - name: About
-      url: /page/about/
+      url: /about/
       weight: 4
+
+# Parte Original
+# menu:
+#   main:
+#     - name: Blog
+#       url: /
+#       weight: 1
+#     - name: Projects
+#       url: /project/
+#       weight: 2
+#     - name: Contact
+#       url: /page/contact/
+#       weight: 3
+#     - name: About
+#       url: /page/about/
+#       weight: 4

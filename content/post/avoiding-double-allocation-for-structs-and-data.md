@@ -1,13 +1,14 @@
 ---
 title: "Avoiding double allocation for structs and data"
-layout: post
+date: 2020-6-26
+draft: false
 ---
 
 Let's say you want to allocate a struct that contains a pointer to
 other data that also needs allocation. The natural way to do it is
 calling malloc twice, one for the container and one for the data.
 
-{% highlight c++ %}
+```C++
 /* The natural way to allocate a struct and its data */
 struct sample_type
 {
@@ -36,7 +37,7 @@ for(int i = 0; i < Container->Count; i++)
 {
     Container->Data[i] = {};
 }
-{% endhighlight %}
+```
 
 Something doesn't feel right, these two allocations are going to be
 used together, one after the other but there is no guarantee they will
@@ -47,7 +48,7 @@ Here is one way to use just a single allocation for the container and
 its data.
 
 
-{% highlight c++ %}
+```c++
 /* Using a single allocation */
 
 struct sample_type
@@ -77,8 +78,7 @@ for(int i = 0; i < Container->Count; i++)
 {
     Container->Data[i] = {};
 }
-{% endhighlight %}
-
+```
 
 If you ask me the second version is better, a single call to malloc
 and things that belong together are adjacent in memory.
@@ -86,7 +86,7 @@ and things that belong together are adjacent in memory.
 There is something you _need_ to be aware of while using this trick,
 Data should always be the last member of the struct.
 
-{% highlight c++ %}
+```C++
 struct sample_struct
 {
     uint32_t Count;
@@ -100,4 +100,4 @@ struct sample_struct
     float Other; // CORRECT, Remember to add struct members before the Data array.
     sample_type *Data;
 };
-{% endhighlight %}
+```
