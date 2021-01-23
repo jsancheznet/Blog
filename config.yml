@@ -4,7 +4,7 @@ theme: ghostwriter
 languageCode: en-us
 copyright: Jorge Sánchez
 # TODO: googleAnalytics: XXX
-disqusShortname: jsanchezuy
+disqusShortname: "jsanchezuy"
 pygmentsUseClasses: true
 pygmentsCodefences: true
 
@@ -51,7 +51,7 @@ params:
   shareTwitter: true
   rss: true
   shareFacebook: true
-  shareLinkedIn: false
+  shareLinkedIn: true
   dateFormat: "Mon, Jan 2, 2006"
   exponeaJsUrl: ""
   exponeaTarget: ""
