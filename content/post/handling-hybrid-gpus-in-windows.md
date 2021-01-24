@@ -1,6 +1,6 @@
 ---
 title: "Handling Hybrid GPU's in Windows"
-date: 2019-12-7
+date: 2019-12-07
 draft: false
 ---
 

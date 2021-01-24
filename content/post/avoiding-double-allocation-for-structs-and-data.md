@@ -1,6 +1,6 @@
 ---
 title: "Avoiding double allocation for structs and data"
-date: 2020-6-26
+date: 2020-06-26
 draft: false
 ---
 

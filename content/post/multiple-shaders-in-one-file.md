@@ -1,6 +1,6 @@
 ---
 title: "Multiple OpenGL shaders in one file"
-date: 2019-12-9
+date: 2019-12-09
 draft: false
 ---
 
