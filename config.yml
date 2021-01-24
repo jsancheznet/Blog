@@ -4,7 +4,7 @@ theme: ghostwriter
 languageCode: en-us
 copyright: Jorge Sánchez
 # TODO: googleAnalytics: XXX
-disqusShortname: "jsanchezuy"
+disqusShortname: blog-jsanchez-uy
 pygmentsUseClasses: true
 pygmentsCodefences: true
 
