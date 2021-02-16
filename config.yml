@@ -76,16 +76,10 @@ menu:
       url: /
       weight: 1
     - name: Projects
-      url: /project/
+      url: /projects/
       weight: 2
-    - name: Contact
-      url: /contact/
-      weight: 3
-    - name: About
-      url: /about/
-      weight: 4
 
-# Parte Original
+# Menus Original
 # menu:
 #   main:
 #     - name: Blog
